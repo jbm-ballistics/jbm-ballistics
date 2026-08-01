@@ -12,7 +12,7 @@
   width: auto; 
   float: top;
   height: 140px;
-  background-image: url(https://jbm-ballistics.github.io/jbm-ballistics/assets/graphics/header_background.png); 
+  background-image: url(/assets/graphics/header_background.png);
   background-position: -170px 0px;
   background-repeat: no-repeat;
   background-color: #C0C0C0;
