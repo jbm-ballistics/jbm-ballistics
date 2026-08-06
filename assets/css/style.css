@@ -88,5 +88,6 @@ textarea {
 	margin-bottom: 6px;
 	width: 100%;
 	max-width: 40em;
-	font-size: 12pt;
+	font-family: inherit;
+  	font-size: 12pt;
 }
