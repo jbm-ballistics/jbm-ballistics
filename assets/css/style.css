@@ -63,6 +63,15 @@
 	margin: 8;
 }
 
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 6px 8px;
+  margin-bottom: 6px;
+  width: 100%;
+  max-width: 40em;
+}
+
 .jbm-contact-send-button
 {
 	background-color: #0096FF;
