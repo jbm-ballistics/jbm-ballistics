@@ -81,3 +81,12 @@ textarea {
 	text-align: center;
 	font-size: 12pt;
 }
+
+.jbm-contact-input
+{
+	padding: 6px 8px;
+	margin-bottom: 6px;
+	width: 100%;
+	max-width: 40em;
+	font-size: 12pt;
+}
