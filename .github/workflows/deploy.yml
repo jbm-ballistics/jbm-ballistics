@@ -1,41 +1,21 @@
-name: Inject commit SHA
+name: Deploy with commit SHA
 
 on:
   push:
-    branches: [ main ]
-
-permissions:
-  contents: write
+    branches: [ main ]   # or master, whatever you use
 
 jobs:
-  inject-sha:
+  deploy:
     runs-on: ubuntu-latest
-    # Prevent the workflow from running on its own commits (avoids infinite loop)
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
 
-      - name: Replace COMMIT_SHA
+      - name: Inject commit SHA
         run: |
           SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
-          echo "Replacing COMMIT_SHA with $SHORT_SHA"
           # Replace in all HTML files
           find . -name "*.html" -exec sed -i "s/COMMIT_SHA/${SHORT_SHA}/g" {} +
 
-      - name: Commit and push changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Only commit if something actually changed
-          if git diff --quiet; then
-            echo "No changes to commit"
-          else
-            git add .
-            git commit -m "Update commit SHA [skip ci]"
-            git push
-          fi
+      # If you deploy via a special branch or action, put that step here.
+      # For classic GitHub Pages (push to gh-pages or main),
+      # you may not need anything else if the site is served directly from the branch.
