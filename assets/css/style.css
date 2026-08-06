@@ -72,14 +72,20 @@ textarea {
   max-width: 40em;
 }
 
-.jbm-contact-send-button
+.jbm-contact-send-button 
 {
-	background-color: #000000;
+	background-color: #000000;   /* or whatever color you want */
 	color: white;
-	/* border: none; */
-	padding: 30px 30px;
-	text-align: center;
-	font-size: 12pt;
+	border: none;                /* important – remove browser border */
+	padding: 12px 28px;          /* adjust these numbers */
+	font-size: 13pt;
+	font-family: inherit;
+	cursor: pointer;
+	border-radius: 4px;          /* optional, looks nicer */
+	
+	/* Force override of browser defaults */
+	-webkit-appearance: none;
+	appearance: none;
 }
 
 .jbm-contact-input
