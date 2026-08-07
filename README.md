@@ -1,3 +1,3 @@
 # jbm-ballistics-apps.github.io
 
-This is a very simple page to provide the manual for the JBM Ballistics iPhone applications.
+This is the last iteration of JBM Ballistics.  The calculators have been retired.  I am keeping some of the downloads and providing information about any iOS applications I develop.
